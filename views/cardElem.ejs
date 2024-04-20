@@ -1,0 +1,31 @@
+<% data.forEach(elem => { %>
+                        
+    <div class="flex justify-start p-2 m-3 bg-white text-sm gap-2 rounded-md overflow-hidden shadow-md items-center">
+        <span class="mx-2 border-1 border-gray-600 rounded-lg overflow-hidden ">
+            <img src=<%=elem.gdacs_icon %> alt="">
+        </span>
+        <span class="">
+            <% var titleList = elem.title.split(" ") %>
+            <span class="block font-bold mt-2">
+                <% var mainTitle  %>
+                <% mainTitle = titleList[1].toUpperCase()+ " IN " + elem.gdacs_country.toUpperCase() %>
+                <% if (titleList[1] == "forest") mainTitle = titleList[1].toUpperCase()+ " FIRE IN " + elem.gdacs_country.toUpperCase() %>
+                <%= mainTitle %>
+            </span>
+            
+
+            <span class="block my-2">
+                <%let date_spiter_F = elem.gdacs_fromdate.split(" ")  %>
+                <%let date_spiter_T = elem.gdacs_todate.split(" ")  %>
+                <%let date = `On - ${date_spiter_F[0]} ${date_spiter_F[1]} ${date_spiter_F[2]}` %>
+                <% if (elem.gdacs_fromdate != elem.gdacs_todate) date = `From - ${date_spiter_F[0]} ${date_spiter_F[1]} ${date_spiter_F[2]} - To -  ${date_spiter_T[0]} ${date_spiter_T[1]} ${date_spiter_T[2]}`%>
+                <%=date %>
+            </span>
+            <span class="block my-2 text-blue-600 hover:text-blue-400 ">
+                <% var summaryLink = elem.links[1].href %>
+                <a href= "<%= '/moreinfo?id=' + elem.id %>"> More Info</a>
+            </span>
+        </span>
+    </div>
+
+<% }); %>
