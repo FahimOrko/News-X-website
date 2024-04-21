@@ -1,5 +1,5 @@
 
-### Welcome to News X
+# Welcome to News X
 
 Welcome to News X, your go-to destination for the latest news updates! We utilize the News API to bring you up-to-the-minute news from around the globe.
 
