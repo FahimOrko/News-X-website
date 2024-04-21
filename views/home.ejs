@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <!-- <style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         @layer utilities {
             .yellow-text{
                 @apply text-yellow-500;
             }
+            
+            .btn{
+                @apply rounded-lg cursor-pointer tracking-wider border-red-500 border-2 text-red-500 hover:bg-red-500 hover:text-white hover:shadow-inner transition ease-out duration-700;
+            }
+
+            .second-b{
+                @apply  border-gray-500 border-2 rounded-lg;
+            }
         }
-    </style> -->
+    </style>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/manualTailwindconfig.js"></script>
@@ -29,9 +37,44 @@
             <!-- nav bar end  -->
             
             <main class="grid lg:col-span-10 bg-gray-300 p-4">
-                <div>       
-                    <h2 class="font-bold text-lg p-2 m-3">
-                        <span>At a time you will see max 60 results</span>
+                <div>
+                    <!-- form start -->
+                    <div class="p-6 m-3 bg-gray-100 rounded-lg">
+                        <form action="/home.ejs" class="from" id="from" method="POST" >
+                            <input class="rounded-sm p-3 my-2 w-full second-b" type="text" name="searchBar" placeholder="Search about something">
+                            <div class="flex">
+                                <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">From</h2>
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fDate" placeholder="dd">
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fMonth" placeholder="mm">
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="fYear" placeholder="yyyy">
+                            </div>
+                            <div class="flex mb-2">
+                                <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">To</h2>
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tDate" placeholder="dd">
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tMonth" placeholder="mm">
+                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="tYear" placeholder="yyyy">
+                            </div>
+                            <div>
+                                <select name="sortBy" class="rounded-sm p-2 mt-2 second-b">
+                                    <option value="">Sort By</option>
+                                    <option value="relevancy">Relevancy</option>
+                                    <option value="popularity">Popularity</option>
+                                    <option value="publishedAt">Published At</option>
+                                </select>
+                                <select name="domains" class="rounded-sm p-2 mt-2 second-b">
+                                    <option value="">Domains</option>
+                                    <option class="" value="bbc.co.uk">Bbc.co.uk</option>
+                                    <option class="" value="techcrunch.com">Techcrunch.com</option>
+                                    <option class="" value="engadget.com">Engadget.com</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="block form-submit btn my-4 mb-4 p-3 uppercase font-semibold text-sm bg-gray-100">Submit</button>
+                        </form>
+                    </div>
+                    <!-- form end  -->
+
+                    <h2 class="font-semibold text-lg p-2 m-3 flex justify-center">
+                        <span class="text-red-400">At a time you will see maximum 60 results</span>
                     </h2>
                     <!-- cards  -->
                     <div class="grid lg:grid-cols-3 sm:grid-cols-2">
