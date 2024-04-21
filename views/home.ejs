@@ -41,32 +41,39 @@
                     <!-- form start -->
                     <div class="p-6 m-3 bg-gray-100 rounded-lg">
                         <form action="/home.ejs" class="from" id="from" method="POST" >
-                            <input class="rounded-sm p-3 my-2 w-full second-b" type="text" name="searchBar" placeholder="Search about something">
                             <div class="flex">
-                                <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">From</h2>
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fDate" placeholder="dd">
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fMonth" placeholder="mm">
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="fYear" placeholder="yyyy">
+                                <input class="rounded-sm p-3 my-2 w-full second-b" type="text" name="searchBar" placeholder="Search about something">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 my-4 ml-3 btn" id="adv-src-btn">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                </svg>     
                             </div>
-                            <div class="flex mb-2">
-                                <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">To</h2>
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tDate" placeholder="dd">
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tMonth" placeholder="mm">
-                                <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="tYear" placeholder="yyyy">
-                            </div>
-                            <div>
-                                <select name="sortBy" class="rounded-sm p-2 mt-2 second-b">
-                                    <option value="">Sort By</option>
-                                    <option value="relevancy">Relevancy</option>
-                                    <option value="popularity">Popularity</option>
-                                    <option value="publishedAt">Published At</option>
-                                </select>
-                                <select name="domains" class="rounded-sm p-2 mt-2 second-b">
-                                    <option value="">Domains</option>
-                                    <option class="" value="bbc.co.uk">Bbc.co.uk</option>
-                                    <option class="" value="techcrunch.com">Techcrunch.com</option>
-                                    <option class="" value="engadget.com">Engadget.com</option>
-                                </select>
+                            <div class="hidden" id="adv-src-options">
+                                <div class="flex">
+                                    <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">From</h2>
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fDate" placeholder="dd">
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="fMonth" placeholder="mm">
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="fYear" placeholder="yyyy">
+                                </div>
+                                <div class="flex mb-2">
+                                    <h2 class="w-20 p-3 mt-2 mr-1 bg-white rounded-lg border-red-500 border-2 text-red-500">To</h2>
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tDate" placeholder="dd">
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-14" type="text" name="tMonth" placeholder="mm">
+                                    <input class="second-b rounded-sm p-3 mt-2 mr-1 w-20" type="text" name="tYear" placeholder="yyyy">
+                                </div>
+                                <div>
+                                    <select name="sortBy" class="rounded-sm p-2 mt-2 second-b">
+                                        <option value="">Sort By</option>
+                                        <option value="relevancy">Relevancy</option>
+                                        <option value="popularity">Popularity</option>
+                                        <option value="publishedAt">Published At</option>
+                                    </select>
+                                    <select name="domains" class="rounded-sm p-2 mt-2 second-b">
+                                        <option value="">Domains</option>
+                                        <option class="" value="bbc.co.uk">Bbc.co.uk</option>
+                                        <option class="" value="techcrunch.com">Techcrunch.com</option>
+                                        <option class="" value="engadget.com">Engadget.com</option>
+                                    </select>
+                                </div>
                             </div>
                             <button type="submit" class="block form-submit btn my-4 mb-4 p-3 uppercase font-semibold text-sm bg-gray-100">Submit</button>
                         </form>
@@ -91,6 +98,9 @@
             $("#menu").toggleClass("hidden").slideToggle();
         });
         $("#alert").removeClass("border-white").addClass("border-red-700");
+        $("#adv-src-btn").on("click", ()=>{
+            $("#adv-src-options").toggleClass("hidden").slideToggle();
+        });
     </script>
 
 </body>
