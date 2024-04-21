@@ -14,8 +14,8 @@ let data;
 
 app.get('/home.ejs', async (req, res) => {
     try {
-        const response = await axios.get(everyEnd + "?q=bitcoin&"+ key);
-        const result = response.data;
+        const response = await axios.get("https://newsapi.org/v2/everything?q=bitcoin&"+ key);
+        const result = response.data.articles.slice(1,61);
         // console.log("-------------------------------\n")
         // console.log(result);
         // console.log("-------------------------------\n")
@@ -26,19 +26,19 @@ app.get('/home.ejs', async (req, res) => {
 });
 
 
-// app.get('/moreinfo?:id', async (req, res) => {
-//     try {
-//         const id = req.query.id;
-//         const response = await axios.get("http://localhost:8000/api/v1/alerts/gdacs/"+id+"/");
-//         const result = response.data;
-//         // console.log("-------------------------------\n")
-//         // console.log(result);
-//         // console.log("-------------------------------\n")
-//         res.redirect(result.link);
-//     } catch (error) {
-//         console.error("Failed to make request:", error.message);
-//     }
-// });
+app.get('/moreinfo?:url', async (req, res) => {
+    try {
+        const url = req.query.url;
+        // const response = await axios.get("http://localhost:8000/api/v1/alerts/gdacs/"+id+"/");
+        // const result = response.data;
+        // console.log("-------------------------------\n")
+        // console.log(result);
+        // console.log("-------------------------------\n")
+        res.redirect(url);
+    } catch (error) {
+        console.error("Failed to make request:", error.message);
+    }
+});
 
 
 app.listen(port, () => {
