@@ -1,9 +1,9 @@
 
-###Welcome to News X
+### Welcome to News X
 
 Welcome to News X, your go-to destination for the latest news updates! We utilize the News API to bring you up-to-the-minute news from around the globe.
 
-##Getting Started
+## Getting Started
 To explore the functionalities of our website, follow these simple steps:
 
 -Clone the Project: Create a folder and clone this project into it.
@@ -14,7 +14,7 @@ To explore the functionalities of our website, follow these simple steps:
 
 Feel free to explore and interact with the website!
 
-##Functionalities
+## Functionalities
 Upon visiting the website, you'll initially see a selection of random news articles related to Bitcoin. Here are the key functionalities:
 
 -Search Bar: Enter keywords into the search bar to find news articles on specific topics.
@@ -26,7 +26,7 @@ Please note that some functionalities may be restricted depending on the access 
 
 The website is designed to be fully responsive, ensuring a seamless experience across all devices.
 
-##Technologies Used
+## Technologies Used
 News X is built using a combination of technologies:
 
 -Backend: JavaScript and Node.js power the backend functionality.
