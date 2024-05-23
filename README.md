@@ -10,7 +10,7 @@ To explore the functionalities of our website, follow these simple steps:
 
 -Clone the Project: Create a folder and clone this project into it.
 
--Install Node.js: If you haven't already, download and install Node.js from here.
+-Install Node.js: If you haven't already, download and install Node.js.
 
 -Set Up API Key: In the app.js folder, locate the const named key. Replace the placeholder with your own API key obtained from the News API like this (const key = "&apiKey=YOUR_API_KEY_HERE").
 
