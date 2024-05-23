@@ -12,7 +12,7 @@ To explore the functionalities of our website, follow these simple steps:
 
 -Install Node.js: If you haven't already, download and install Node.js from here.
 
--Set Up API Key: In the app.js folder, locate the const named key. Replace the placeholder with your own API key obtained from the News API like this "&apiKey=YOUR_API_KEY_HERE".
+-Set Up API Key: In the app.js folder, locate the const named key. Replace the placeholder with your own API key obtained from the News API like this (const key = "&apiKey=YOUR_API_KEY_HERE").
 
 -Run the Project: Navigate to the cloned folder in your terminal, then execute the command node app.js. If you see the message "Server running on port: 3000" in the terminal, your server is up and running.
 
